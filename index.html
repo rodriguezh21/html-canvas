@@ -5,9 +5,9 @@
     <title>HTML5 Canvas</title>
   </head>
   <body>
-    
-    <canvas id="draw" width="800" height="800">
-      </canvas>
+    <div id="header">Click and Drag cursor to see the magic!</div>
+
+    <canvas id="draw" width="800" height="800"> </canvas>
     <script>
       const canvas = document.querySelector('#draw')
       const ctx = canvas.getContext('2d')
@@ -36,10 +36,12 @@
         ctx.stroke()
         ;[lastX, lastY] = [e.offsetX, e.offsetY]
         hue++ //increment color starting from red
-        if (hue >= 360) { //loop colors from red back to red
+        if (hue >= 360) {
+          //loop colors from red back to red
           hue = 0
         }
-        if (ctx.lineWidth >= 60 || ctx.lineWidth <= 1) { // max line width set to 60 then proceeds to decrease
+        if (ctx.lineWidth >= 60 || ctx.lineWidth <= 1) {
+          // max line width set to 60 then proceeds to decrease
           direction = !direction
         }
         if (direction) {
@@ -63,6 +65,11 @@
       html,
       body {
         margin: 0;
+        font-family: 'helvetica neue';
+      }
+      div {
+        text-align: center;
+        font-weight: bold;
       }
     </style>
   </body>
